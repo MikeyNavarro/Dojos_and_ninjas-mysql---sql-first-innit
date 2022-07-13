@@ -1,0 +1,24 @@
+INSERT INTO dojos(name) VALUES ('Burbank') , ('online'), ('Sanfrancisco')
+
+DELETE FROM `dojos_and_ninjas_Schema`.`dojos` WHERE (`id` = '4');
+DELETE FROM `dojos_and_ninjas_Schema`.`dojos` WHERE (`id` = '3');
+DELETE FROM `dojos_and_ninjas_Schema`.`dojos` WHERE (`id` = '2');
+
+INSERT INTO dojos(name) VALUES ('Las-Vegas') , ('Tahoe'), ('Oregon')
+
+INSERT INTO `dojos_and_ninjas_Schema`.`ninjas` (`first_name`, `last_name`, `age`, `dojos_id`) VALUES ('Mikey', 'Navarro', '22', '5');
+
+('ben', 'watson' '44', '5');
+
+('jake', 'alspaw', '22', '5');
+
+-- Query: Retrieve all the ninjas from the last dojo
+
+select * from ninjas where dojos_id = (select id from dojos where id = 7)
+
+-- Query: Retrieve all the ninjas from the first dojo
+
+select * from ninjas where dojos_id = (select id from dojos where id = 5)
+
+select * from dojos where id =(SELECT dojos_id FROM ninjas ORDER BY id DESC LIMIT 1);
+
